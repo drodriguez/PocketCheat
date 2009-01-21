@@ -7,8 +7,10 @@
 //
 
 #import "PocketCheatAppDelegate.h"
-#import "PCCheatListParser.h"
-#import "PCCheatParser.h"
+#import "PCListController.h"
+
+#define PC_FAVORITES_TAG 1001
+#define PC_RECENTS_TAG   1003
 
 @implementation PocketCheatAppDelegate
 
@@ -16,33 +18,40 @@
 @synthesize tabBarController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-  NSURL *allCheatsUrl = [NSURL URLWithString:@"http://cheat.errtheblog.com/yr/"];
+
+  PCListController *favorites = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  favorites.title = @"Favorites";
+  UINavigationController *favoritesNavigation =
+    [[UINavigationController alloc] initWithRootViewController:favorites];  
   
-  NSString *allCheatsYaml = [NSString stringWithContentsOfURL:allCheatsUrl];
+  PCListController *all = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  all.title = @"All";
+  UINavigationController *allNavigation =
+  [[UINavigationController alloc] initWithRootViewController:all];
   
-  PCCheatListParser *parser = [[PCCheatListParser alloc] initWithString:allCheatsYaml];
-  if ([parser parse] < 0) {
-    NSLog(@"Parsing failed");
-  } else {
-    NSArray *results = parser.elements;
-    NSLog(@"title: %@", parser.title);
-    for (NSString *item in results) {
-      NSLog(@"- item: %@", item);
-    }
-  }
-  [parser release];
+  PCListController *recent = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  recent.title = @"Just created";
+  UINavigationController *recentNavigation =
+    [[UINavigationController alloc] initWithRootViewController:recent];
   
-  NSURL *cheatUrl = [NSURL URLWithString:@"http://cheat.errtheblog.com/y/haml"];
-  NSString *cheatYaml = [NSString stringWithContentsOfURL:cheatUrl];
+  PCListController *updated = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  updated.title = @"Just updated";
+  UINavigationController *updatedNavigation =
+  [[UINavigationController alloc] initWithRootViewController:updated];
   
-  PCCheatParser *parser2 = [[PCCheatParser alloc] initWithString:cheatYaml];
-  if ([parser2 parse] < 0) {
-    NSLog(@"Parsing 2 failed");
-  } else {
-    NSLog(@"title: %@", parser2.title);
-    NSLog(@"contents:\n%@", parser2.contents);
-  }
-  [parser2 release];
+  tabBarController.viewControllers =
+    [NSArray arrayWithObjects:favoritesNavigation,
+      allNavigation,
+      recentNavigation,
+     updatedNavigation,
+     nil];
+  
+  [favorites release];
+  [favoritesNavigation release];
+  [recent release];
+  [recentNavigation release];
+  [updated release];
+  [updatedNavigation release];
   
   // Add the tab bar controller's current view as a subview of the window
   [window addSubview:tabBarController.view];

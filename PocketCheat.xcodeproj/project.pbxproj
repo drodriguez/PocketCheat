@@ -15,6 +15,7 @@
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		6587679B0F27954B001DAB98 /* PCCheatParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6587679A0F27954B001DAB98 /* PCCheatParser.m */; };
 		6591AE1A0F273E360061846C /* PCCheatListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6591AE190F273E360061846C /* PCCheatListParser.m */; };
+		65DD76B20F27AE7D0051197E /* PCListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD76B10F27AE7D0051197E /* PCListController.m */; };
 		65EF6BD60F26807D000CC3D2 /* api.c in Sources */ = {isa = PBXBuildFile; fileRef = 65EF6BBB0F26800E000CC3D2 /* api.c */; };
 		65EF6BD70F26807E000CC3D2 /* dumper.c in Sources */ = {isa = PBXBuildFile; fileRef = 65EF6BBC0F26800E000CC3D2 /* dumper.c */; };
 		65EF6BD80F26807E000CC3D2 /* emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = 65EF6BBD0F26800E000CC3D2 /* emitter.c */; };
@@ -51,6 +52,8 @@
 		6587679A0F27954B001DAB98 /* PCCheatParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCheatParser.m; sourceTree = "<group>"; };
 		6591AE180F273E360061846C /* PCCheatListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCheatListParser.h; sourceTree = "<group>"; };
 		6591AE190F273E360061846C /* PCCheatListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCheatListParser.m; sourceTree = "<group>"; };
+		65DD76B00F27AE7D0051197E /* PCListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCListController.h; sourceTree = "<group>"; };
+		65DD76B10F27AE7D0051197E /* PCListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCListController.m; sourceTree = "<group>"; };
 		65EF6BBB0F26800E000CC3D2 /* api.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = api.c; path = libyaml/api.c; sourceTree = "<group>"; };
 		65EF6BBC0F26800E000CC3D2 /* dumper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dumper.c; path = libyaml/dumper.c; sourceTree = "<group>"; };
 		65EF6BBD0F26800E000CC3D2 /* emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = emitter.c; path = libyaml/emitter.c; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				6591AE190F273E360061846C /* PCCheatListParser.m */,
 				658767990F27954B001DAB98 /* PCCheatParser.h */,
 				6587679A0F27954B001DAB98 /* PCCheatParser.m */,
+				65DD76B00F27AE7D0051197E /* PCListController.h */,
+				65DD76B10F27AE7D0051197E /* PCListController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				1D3623260D0F684500981E51 /* PocketCheatAppDelegate.m in Sources */,
 				6591AE1A0F273E360061846C /* PCCheatListParser.m in Sources */,
 				6587679B0F27954B001DAB98 /* PCCheatParser.m in Sources */,
+				65DD76B20F27AE7D0051197E /* PCListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
