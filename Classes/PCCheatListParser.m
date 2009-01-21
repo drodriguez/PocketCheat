@@ -96,7 +96,7 @@
     
     if (listItem->type != YAML_SCALAR_NODE) {
       NSLog(@"listItem is not a scalar node");
-      retval = -1;
+      retval = -1; // FIXME
       goto cleanup;
     }
     
@@ -119,6 +119,7 @@ cleanup:
 - (void)dealloc {
   self.title = nil;
   self.elements = nil;
+  self.yaml = nil;
   
   [super dealloc];
 }
