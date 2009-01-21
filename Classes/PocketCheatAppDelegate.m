@@ -8,6 +8,7 @@
 
 #import "PocketCheatAppDelegate.h"
 #import "PCCheatListParser.h"
+#import "PCCheatParser.h"
 
 @implementation PocketCheatAppDelegate
 
@@ -29,6 +30,19 @@
       NSLog(@"- item: %@", item);
     }
   }
+  [parser release];
+  
+  NSURL *cheatUrl = [NSURL URLWithString:@"http://cheat.errtheblog.com/y/haml"];
+  NSString *cheatYaml = [NSString stringWithContentsOfURL:cheatUrl];
+  
+  PCCheatParser *parser2 = [[PCCheatParser alloc] initWithString:cheatYaml];
+  if ([parser2 parse] < 0) {
+    NSLog(@"Parsing 2 failed");
+  } else {
+    NSLog(@"title: %@", parser2.title);
+    NSLog(@"contents:\n%@", parser2.contents);
+  }
+  [parser2 release];
   
   // Add the tab bar controller's current view as a subview of the window
   [window addSubview:tabBarController.view];
