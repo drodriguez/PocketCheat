@@ -8,6 +8,7 @@
 
 #import "PCListController.h"
 #import "PCCheatListParser.h"
+#import "PCCheatViewController.h"
 
 @interface PCListController ()
 
@@ -114,11 +115,13 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  // Navigation logic may go here. Create and push another view controller.
+  PCCheatViewController *cheatViewController = [[PCCheatViewController alloc] initWithNibName:@"CheatView" bundle:nil];
+  cheatViewController.cheatName = [elements_ objectAtIndex:indexPath.row];
+  [self.navigationController pushViewController:cheatViewController animated:YES];
+  [cheatViewController release];
 }
 
 

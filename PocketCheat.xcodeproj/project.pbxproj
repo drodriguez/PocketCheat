@@ -26,6 +26,9 @@
 		65EF6BDD0F268082000CC3D2 /* writer.c in Sources */ = {isa = PBXBuildFile; fileRef = 65EF6BC20F26800E000CC3D2 /* writer.c */; };
 		65EF6BDE0F268083000CC3D2 /* yaml.h in Headers */ = {isa = PBXBuildFile; fileRef = 65EF6BC30F26800E000CC3D2 /* yaml.h */; };
 		65EF6BF40F2682A6000CC3D2 /* libyaml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65EF6BC90F268021000CC3D2 /* libyaml.a */; };
+		65F5D4150F2CCC9800D959B7 /* PCCheatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F5D4140F2CCC9800D959B7 /* PCCheatViewController.m */; };
+		65F5D4170F2CCD1400D959B7 /* CheatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F5D4160F2CCD1400D959B7 /* CheatView.xib */; };
+		65F5D4260F2CD62F00D959B7 /* PCNSString+Wrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F5D4250F2CD62F00D959B7 /* PCNSString+Wrap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,11 @@
 		65EF6BC40F26800E000CC3D2 /* yaml_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml_private.h; path = libyaml/yaml_private.h; sourceTree = "<group>"; };
 		65EF6BC90F268021000CC3D2 /* libyaml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libyaml.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EF6BE40F2680EE000CC3D2 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = libyaml/config.h; sourceTree = "<group>"; };
+		65F5D4130F2CCC9800D959B7 /* PCCheatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCheatViewController.h; sourceTree = "<group>"; };
+		65F5D4140F2CCC9800D959B7 /* PCCheatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCheatViewController.m; sourceTree = "<group>"; };
+		65F5D4160F2CCD1400D959B7 /* CheatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheatView.xib; sourceTree = "<group>"; };
+		65F5D4240F2CD62F00D959B7 /* PCNSString+Wrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PCNSString+Wrap.h"; sourceTree = "<group>"; };
+		65F5D4250F2CD62F00D959B7 /* PCNSString+Wrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PCNSString+Wrap.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +110,10 @@
 				6587679A0F27954B001DAB98 /* PCCheatParser.m */,
 				65DD76B00F27AE7D0051197E /* PCListController.h */,
 				65DD76B10F27AE7D0051197E /* PCListController.m */,
+				65F5D4130F2CCC9800D959B7 /* PCCheatViewController.h */,
+				65F5D4140F2CCC9800D959B7 /* PCCheatViewController.m */,
+				65F5D4240F2CD62F00D959B7 /* PCNSString+Wrap.h */,
+				65F5D4250F2CD62F00D959B7 /* PCNSString+Wrap.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -142,6 +154,7 @@
 			children = (
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
+				65F5D4160F2CCD1400D959B7 /* CheatView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				65F5D4170F2CCD1400D959B7 /* CheatView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +276,8 @@
 				6591AE1A0F273E360061846C /* PCCheatListParser.m in Sources */,
 				6587679B0F27954B001DAB98 /* PCCheatParser.m in Sources */,
 				65DD76B20F27AE7D0051197E /* PCListController.m in Sources */,
+				65F5D4150F2CCC9800D959B7 /* PCCheatViewController.m in Sources */,
+				65F5D4260F2CD62F00D959B7 /* PCNSString+Wrap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
