@@ -13,8 +13,10 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		654B01AB0F51B38100E83A2D /* PCCheatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 654B01AA0F51B38100E83A2D /* PCCheatManager.m */; };
 		6587679B0F27954B001DAB98 /* PCCheatParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6587679A0F27954B001DAB98 /* PCCheatParser.m */; };
 		6591AE1A0F273E360061846C /* PCCheatListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6591AE190F273E360061846C /* PCCheatListParser.m */; };
+		659BE5FB0F2DC6BF0067CC13 /* cheat-icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 659BE5FA0F2DC6BF0067CC13 /* cheat-icon-57x57.png */; };
 		65DD76B20F27AE7D0051197E /* PCListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DD76B10F27AE7D0051197E /* PCListController.m */; };
 		65EF6BD60F26807D000CC3D2 /* api.c in Sources */ = {isa = PBXBuildFile; fileRef = 65EF6BBB0F26800E000CC3D2 /* api.c */; };
 		65EF6BD70F26807E000CC3D2 /* dumper.c in Sources */ = {isa = PBXBuildFile; fileRef = 65EF6BBC0F26800E000CC3D2 /* dumper.c */; };
@@ -51,10 +53,13 @@
 		28A0AB4B0D9B1048005BE974 /* PocketCheat_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketCheat_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		654B01A90F51B38100E83A2D /* PCCheatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCheatManager.h; sourceTree = "<group>"; };
+		654B01AA0F51B38100E83A2D /* PCCheatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCheatManager.m; sourceTree = "<group>"; };
 		658767990F27954B001DAB98 /* PCCheatParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCheatParser.h; sourceTree = "<group>"; };
 		6587679A0F27954B001DAB98 /* PCCheatParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCheatParser.m; sourceTree = "<group>"; };
 		6591AE180F273E360061846C /* PCCheatListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCheatListParser.h; sourceTree = "<group>"; };
 		6591AE190F273E360061846C /* PCCheatListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCheatListParser.m; sourceTree = "<group>"; };
+		659BE5FA0F2DC6BF0067CC13 /* cheat-icon-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cheat-icon-57x57.png"; path = "Resources/cheat-icon-57x57.png"; sourceTree = "<group>"; };
 		65DD76B00F27AE7D0051197E /* PCListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCListController.h; sourceTree = "<group>"; };
 		65DD76B10F27AE7D0051197E /* PCListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCListController.m; sourceTree = "<group>"; };
 		65EF6BBB0F26800E000CC3D2 /* api.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = api.c; path = libyaml/api.c; sourceTree = "<group>"; };
@@ -114,6 +119,8 @@
 				65F5D4140F2CCC9800D959B7 /* PCCheatViewController.m */,
 				65F5D4240F2CD62F00D959B7 /* PCNSString+Wrap.h */,
 				65F5D4250F2CD62F00D959B7 /* PCNSString+Wrap.m */,
+				654B01A90F51B38100E83A2D /* PCCheatManager.h */,
+				654B01AA0F51B38100E83A2D /* PCCheatManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				659BE5FA0F2DC6BF0067CC13 /* cheat-icon-57x57.png */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				65F5D4160F2CCD1400D959B7 /* CheatView.xib */,
@@ -261,6 +269,7 @@
 			files = (
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				65F5D4170F2CCD1400D959B7 /* CheatView.xib in Resources */,
+				659BE5FB0F2DC6BF0067CC13 /* cheat-icon-57x57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +287,7 @@
 				65DD76B20F27AE7D0051197E /* PCListController.m in Sources */,
 				65F5D4150F2CCC9800D959B7 /* PCCheatViewController.m in Sources */,
 				65F5D4260F2CD62F00D959B7 /* PCNSString+Wrap.m in Sources */,
+				654B01AB0F51B38100E83A2D /* PCCheatManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
