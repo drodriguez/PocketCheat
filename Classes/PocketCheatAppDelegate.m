@@ -18,23 +18,25 @@
 @synthesize tabBarController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-
-  PCListController *favorites = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  
+  PCCheatManager *manager = [[PCCheatManager alloc] initWithDatabase:nil];
+  
+  PCListController *favorites = [[PCListController alloc] initWithManager:manager andElements:@selector(allCheats)];
   favorites.title = @"Favorites";
   UINavigationController *favoritesNavigation =
     [[UINavigationController alloc] initWithRootViewController:favorites];  
   
-  PCListController *all = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  PCListController *all = [[PCListController alloc] initWithManager:manager andElements:@selector(allCheats)];
   all.title = @"All";
   UINavigationController *allNavigation =
   [[UINavigationController alloc] initWithRootViewController:all];
   
-  PCListController *recent = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  PCListController *recent = [[PCListController alloc] initWithManager:manager andElements:@selector(justCreated)];
   recent.title = @"Just created";
   UINavigationController *recentNavigation =
     [[UINavigationController alloc] initWithRootViewController:recent];
   
-  PCListController *updated = [[PCListController alloc] initWithStyle:UITableViewStylePlain];
+  PCListController *updated = [[PCListController alloc] initWithManager:manager andElements:@selector(justUpdated)];
   updated.title = @"Just updated";
   UINavigationController *updatedNavigation =
   [[UINavigationController alloc] initWithRootViewController:updated];

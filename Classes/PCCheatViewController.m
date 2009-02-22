@@ -7,7 +7,7 @@
 //
 
 #import "PCCheatViewController.h"
-#import "PCCheatParser.h"
+#import "PCCheatManager.h"
 #import "PCNSString+Wrap.h"
 
 static NSString *htmlTemplate =
@@ -24,17 +24,18 @@ static NSString *htmlTemplate =
 
 @implementation PCCheatViewController
 
+@synthesize manager = manager_;
 @synthesize cheatName = cheatName_;
 
-/*
+
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
+      self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
-*/
+
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -48,32 +49,21 @@ static NSString *htmlTemplate =
   
   self.title = self.cheatName;
   
-  NSString *urlStr = [NSString stringWithFormat:@"http://cheat.errtheblog.com/y/%@", self.cheatName];
-  NSURL *url = [NSURL URLWithString:urlStr];
-  NSString *yaml = [NSString stringWithContentsOfURL:url];
-  
-  PCCheatParser *parser = [[PCCheatParser alloc] initWithString:yaml];
-  if ([parser parse] >= 0) {
-    NSString *contents = parser.contents;
-    NSString *wrappedContents = [contents wrapAtWidth:39];
-    // NSLog(@"wrappedContents: %@", wrappedContents);
-    NSString *htmlString = [NSString stringWithFormat:htmlTemplate, wrappedContents];
-    // NSLog(@"htmlString: %@", htmlString);
-    [webView loadHTMLString:htmlString baseURL:url];
-    [webView setScalesPageToFit:YES];
-  } else {
-    // TODO: error
-  }
-  [parser release];
+  NSString *contents = [manager_ cheatNamed:self.cheatName];
+  NSString *wrappedContents = [contents wrapAtWidth:39];
+  // NSLog(@"wrappedContents: %@", wrappedContents);
+  NSString *htmlString = [NSString stringWithFormat:htmlTemplate, wrappedContents];
+  // NSLog(@"htmlString: %@", htmlString);
+  [webView loadHTMLString:htmlString baseURL:nil]; // TODO: baseURL?
+  [webView setScalesPageToFit:YES];  
 }
 
-/*
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview

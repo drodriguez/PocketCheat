@@ -21,30 +21,19 @@
 
 @synthesize elements = elements_;
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style]) {
-    }
-    return self;
+-(id)initWithManager:(PCCheatManager *)manager andElements:(SEL)elementsSelector {
+  if (self = [super initWithStyle:UITableViewStylePlain]) {
+    manager_ = manager;
+    elementsSelector_ = elementsSelector;
+  }
+  
+  return self;
 }
-*/
-
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  NSURL *url = [NSURL URLWithString:@"http://cheat.errtheblog.com/ya/"];
-  NSString *yaml = [NSString stringWithContentsOfURL:url];
-  
-  PCCheatListParser *parser = [[PCCheatListParser alloc] initWithString:yaml];
-  if ([parser parse] >= 0) {
-    self.elements = parser.elements;
-  } else {
-    // TODO: error
-  }
-  
-  [parser release];
+  self.elements = [manager_ performSelector:elementsSelector_];
   
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -72,13 +61,12 @@
 }
 */
 
-/*
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+  // Return YES for supported orientations
+  return YES;
 }
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
@@ -119,6 +107,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   // Navigation logic may go here. Create and push another view controller.
   PCCheatViewController *cheatViewController = [[PCCheatViewController alloc] initWithNibName:@"CheatView" bundle:nil];
+  cheatViewController.manager = manager_;
   cheatViewController.cheatName = [elements_ objectAtIndex:indexPath.row];
   [self.navigationController pushViewController:cheatViewController animated:YES];
   [cheatViewController release];
