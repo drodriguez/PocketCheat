@@ -3,7 +3,6 @@
 //  PocketCheat
 //
 //  Created by Daniel Rodríguez Troitiño on 20/01/09.
-//  Copyright Daniel Rodríguez Troitiño 2009. All rights reserved.
 //
 
 #import "PocketCheatAppDelegate.h"

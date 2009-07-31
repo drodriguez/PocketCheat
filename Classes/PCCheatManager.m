@@ -3,7 +3,6 @@
 //  PocketCheat
 //
 //  Created by Daniel Rodríguez Troitiño on 22/02/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
 #import "PCCheatManager.h"
